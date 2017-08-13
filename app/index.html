@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
+</head>
+<body>
+    <div class="wrapper" id="app">
+        <table class="main-table" v-if="list">
+            <tr>
+                <th>№</th>
+                <th>Product number</th>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Name</th>
+                <th>Quantity</th>
+            </tr>
+            <tr v-for="(item, index) in list">
+                <td>{{index + 1}}</td>
+                <td>{{item.number}}</td>
+                <td>{{item.date}}</td>
+                <td>{{item.category}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.quantity}}</td>
+            </tr>
+        </table>
+    </div>
+<script src="scripts/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+[{
+    "id": 0,
+    "number": "SCU00000",
+    "date": "10.10.2010",
+    "category": "dresses",
+    "name": "little black dress",
+    "quantity": "few"
+  },{
+    "id": 1,
+    "number": "SCU00001",
+    "date": "11.10.2010",
+    "category": "dresses",
+    "name": "red dress",
+    "quantity": "average"
+  },{
+    "id": 2,
+    "number": "SCU00002",
+    "date": "01.10.2010",
+    "category": "skirts",
+    "name": "long blue skirt",
+    "quantity": "lot"
+  },{
+    "id": 3,
+    "number": "SCU00003",
+    "date": "01.12.2010",
+    "category": "skirts",
+    "name": "long blue skirt",
+    "quantity": "lot"
+  },{
+    "id": 4,
+    "number": "SCU00004",
+    "date": "05.12.2010",
+    "category": "skirts",
+    "name": "green skirt",
+    "quantity": "none"
+  },{
+    "id": 5,
+    "number": "SCU00005",
+    "date": "10.10.2010",
+    "category": "skirts",
+    "name": "white skirt",
+    "quantity": "none"
+  },{
+    "id": 6,
+    "number": "SCU00006",
+    "date": "11.10.2010",
+    "category": "t-shirts",
+    "name": "simple white t-shirt",
+    "quantity": "lot"
+  },{
+    "id": 7,
+    "number": "SCU00007",
+    "date": "11.10.2010",
+    "category": "t-shirts",
+    "name": "simple beige t-shirt",
+    "quantity": "lot"
+  },{
+    "id": 8,
+    "number": "SCU00008",
+    "date": "11.10.2010",
+    "category": "t-shirts",
+    "name": "simple red t-shirt",
+    "quantity": "lot"
+  },{
+    "id": 9,
+    "number": "SCU00009",
+    "date": "11.10.2010",
+    "category": "t-shirts",
+    "name": "simple green t-shirt",
+    "quantity": "few"
+  },{
+    "id": 10,
+    "number": "SCU00010",
+    "date": "13.11.2010",
+    "category": "shoes",
+    "name": "black shoes",
+    "quantity": "average"
+  },{
+    "id": 11,
+    "number": "SCU00011",
+    "date": "13.11.2010",
+    "category": "shoes",
+    "name": "white shoes",
+    "quantity": "none"
+  }
+]

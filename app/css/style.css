@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    background: navy;
+}
+
+.wrapper{
+    max-width: 102.4rem;
+    margin: 4rem auto;
+    padding: 5rem 2rem 2rem;
+    background: white;
+}
+
+.main-table{
+    font-size: 1.8rem;
+    line-height: 1.54;
+    margin: 0 auto;
+    border: 2px solid grey;
+    border-collapse: collapse;
+}
+
+.main-table tr:nth-child(2n){
+    background: lightgrey;
+}
+
+.main-table td, .main-table th{
+    height: 3rem;
+    padding: 0 2rem;
+    text-align: left;
+}
+
