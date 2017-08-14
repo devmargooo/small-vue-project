@@ -26,6 +26,10 @@ body{
     border-collapse: collapse;
 }
 
+.main-table thead{
+    background: lightblue;
+}
+
 .main-table tr:nth-child(2n){
     background: lightgrey;
 }
@@ -34,5 +38,11 @@ body{
     height: 3rem;
     padding: 0 2rem;
     text-align: left;
+    transition: all 0.6s;
+}
+
+.main-table th:hover{
+    color: crimson;
+
 }
 

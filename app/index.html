@@ -13,22 +13,21 @@
 <body>
     <div class="wrapper" id="app">
         <table class="main-table" v-if="list">
-            <tr>
-                <th>№</th>
-                <th>Product number</th>
-                <th>Date</th>
-                <th>Category</th>
-                <th>Name</th>
-                <th>Quantity</th>
-            </tr>
-            <tr v-for="(item, index) in list">
-                <td>{{index + 1}}</td>
-                <td>{{item.number}}</td>
-                <td>{{item.date}}</td>
-                <td>{{item.category}}</td>
-                <td>{{item.name}}</td>
-                <td>{{item.quantity}}</td>
-            </tr>
+            <thead>
+                <tr>
+                    <th v-for="column in columns" @click="sortBy(column)">{{column}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(item, index) in list">
+                    <td>{{index + 1}}</td>
+                    <td>{{item.number}}</td>
+                    <td>{{item.date}}</td>
+                    <td>{{item.category}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.quantity}}</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 <script src="scripts/script.js"></script>
