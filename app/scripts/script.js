@@ -4,20 +4,39 @@ new Vue({
         list: false,
         sortKey: '№',
         search: '',
-        reverse: false,
+        reverse: {},
         columns: ['№', 'Product number', 'Date', 'Category', 'Name', 'Quantity'],
     },
     mounted: function () {
         this.load();
+        this.initReverse();
     },
     methods: {
         sortBy: function(sortKey) {
-            this.list.sort(this.compareByName);
+            switch (sortKey){
+                case 'Name':
+                    if (!this.reverse[sortKey]) this.list.sort(this.compareByName);
+                    else this.list.sort(this.compareByNameReversed);
+                    this.reverse[sortKey] = !this.reverse[sortKey];
+                    break;
+                default:
+                    return;
+            }
         },
         compareByName: function (a, b) {
             if (a.name < b.name) return -1;
             if (a.name > b.name) return 1;
             return 0;
+        },
+        compareByNameReversed: function (a, b) {
+            if (a.name > b.name) return -1;
+            if (a.name < b.name) return 1;
+            return 0;
+        },
+        initReverse: function () {
+            for (item in this.columns){
+                this.reverse[this.columns[item]] = false;
+            }
         },
         load: function () {
 
