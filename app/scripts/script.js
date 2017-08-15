@@ -4,6 +4,7 @@ new Vue({
         list: false,
         sortKey: '№',
         search: '',
+        filter: 'all',
         reverse: {},
         columns: ['№', 'Product number', 'Date', 'Category', 'Name', 'Quantity'],
     },
@@ -12,6 +13,13 @@ new Vue({
         this.initReverse();
     },
     methods: {
+        filterArray: function (item) {
+            if (this.filter === 'all') return true;
+            else if (item.category == this.filter) return true;
+        },
+        setFilter: function () {
+
+        },
         sortBy: function(sortKey) {
             switch (sortKey){
                 case 'Name':

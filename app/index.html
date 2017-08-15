@@ -12,6 +12,18 @@
 </head>
 <body>
     <div class="wrapper" id="app">
+        <div class="input-container">
+            <input id="input-dresses" class="input" value="dresses" v-model="filter" type="radio">
+            <label class="label" for="input-dresses">Dresses</label>
+            <input id="input-skirts" class="input" value="skirts" v-model="filter" type="radio">
+            <label class="label" for="input-skirts">Skirts</label>
+            <input id="input-tshirts" class="input" value="t-shirts" v-model="filter" type="radio">
+            <label class="label" for="input-tshirts">T-shirts</label>
+            <input id="input-shoes" class="input" value="shoes" v-model="filter" type="radio">
+            <label class="label" for="input-shoes">Shoes</label>
+            <input id="input-all" class="input" value="all" v-model="filter" type="radio">
+            <label class="label" for="input-all">All</label>
+        </div>
         <table class="main-table" v-if="list">
             <thead>
                 <tr>
@@ -19,7 +31,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(item, index) in list">
+                <tr v-for="(item, index) in list" v-if="filterArray(item)">
                     <td>{{index + 1}}</td>
                     <td>{{item.number}}</td>
                     <td>{{item.date}}</td>
