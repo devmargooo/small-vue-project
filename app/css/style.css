@@ -58,3 +58,37 @@ body{
 .label{
     font-size: 1.6rem;
 }
+
+.description{
+    display: inline-block;
+    font-size: 1.6rem;
+}
+
+.button{
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    background: lightblue;
+    border: none;
+    box-shadow: none;
+    transition: all 0.5s;
+}
+
+.button:hover, .button:focus{
+    background: crimson;
+}
+
+.button:active{
+    opacity: 0.5;
+}
+
+.button--disabled{
+    background: lightgrey;
+}
+
+.button-left{
+    margin-right: 7rem;
+}
+
+.button-right{
+    margin-left: 7rem;
+}

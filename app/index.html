@@ -41,6 +41,17 @@
                 </tr>
             </tbody>
         </table>
+        <div class="input-container">
+            <button class="button button-left"> < </button>
+            <p class="description">Show by:</p>
+            <input id="input-five" class="input" value="five" v-model="show" type="radio">
+            <label class="label" for="input-five">5</label>
+            <input id="input-ten" class="input" value="ten" v-model="show" type="radio">
+            <label class="label" for="input-ten">10</label>
+            <input id="input-show-all" class="input" value="all" v-model="show" type="radio">
+            <label class="label" for="input-show-all">All</label>
+            <button class="button button-right"> > </button>
+        </div>
     </div>
 <script src="scripts/script.js"></script>
 </body>

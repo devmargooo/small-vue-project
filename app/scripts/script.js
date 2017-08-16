@@ -5,6 +5,7 @@ new Vue({
         sortKey: '№',
         search: '',
         filter: 'all',
+        show: 'all',
         reverse: {},
         columns: ['№', 'Product number', 'Date', 'Category', 'Name', 'Quantity'],
     },
