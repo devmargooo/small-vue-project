@@ -23,12 +23,10 @@ new Vue({
                   return this.listOrigin;
               case 'five':
                   this.pagesCount = Math.ceil(this.listOrigin.length / 5);
-                  console.log(this.pagesCount);
-                  return this.listOrigin.slice(this.page, this.page + 5);
+                  return this.listOrigin.slice(this.page*5, (this.page + 1)*5);
               case 'ten':
                   this.pagesCount = Math.ceil(this.listOrigin.length / 10);
-                  console.log(this.pagesCount);
-                  return this.listOrigin.slice(this.page, this.page + 10);
+                  return this.listOrigin.slice(this.page*10, (this.page + 1)*10);
               default:
                   return this.listOrigin;
           }
@@ -148,6 +146,12 @@ new Vue({
             for (item in this.columns){
                 this.reverse[this.columns[item]] = false;
             }
+        },
+        pageUp: function () {
+            if (this.page < this.pagesCount - 1) this.page++;
+        },
+        pageDown: function () {
+            if (this.page > 0) this.page--;
         },
         load: function () {
 

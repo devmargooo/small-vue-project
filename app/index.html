@@ -13,15 +13,15 @@
 <body>
     <div class="wrapper" id="app">
         <div class="input-container">
-            <input id="input-dresses" class="input" value="dresses" v-model="filter" type="radio">
+            <input id="input-dresses" class="input" value="dresses" v-model="filter" type="radio" @click="page = 0">
             <label class="label" for="input-dresses">Dresses</label>
-            <input id="input-skirts" class="input" value="skirts" v-model="filter" type="radio">
+            <input id="input-skirts" class="input" value="skirts" v-model="filter" type="radio" @click="page = 0">
             <label class="label" for="input-skirts">Skirts</label>
-            <input id="input-tshirts" class="input" value="t-shirts" v-model="filter" type="radio">
+            <input id="input-tshirts" class="input" value="t-shirts" v-model="filter" type="radio" @click="page = 0">
             <label class="label" for="input-tshirts">T-shirts</label>
-            <input id="input-shoes" class="input" value="shoes" v-model="filter" type="radio">
+            <input id="input-shoes" class="input" value="shoes" v-model="filter" type="radio" @click="page = 0">
             <label class="label" for="input-shoes">Shoes</label>
-            <input id="input-all" class="input" value="all" v-model="filter" type="radio">
+            <input id="input-all" class="input" value="all" v-model="filter" type="radio" @click="page = 0">
             <label class="label" for="input-all">All</label>
         </div>
         <table class="main-table" v-if="list">
@@ -45,17 +45,19 @@
             <button class="button button-left"
                 v-bind:class="buttonLeftClass"
                 v-bind:disabled="IsButtonLeftDisabled"
+                @click="pageDown()"
                 type="button"> < </button>
             <p class="description">Show by:</p>
-            <input id="input-five" class="input" value="five" v-model="show" type="radio">
+            <input id="input-five" class="input" value="five" v-model="show" type="radio" @click="page = 0">
             <label class="label" for="input-five">5</label>
-            <input id="input-ten" class="input" value="ten" v-model="show" type="radio">
+            <input id="input-ten" class="input" value="ten" v-model="show" type="radio" @click="page = 0">
             <label class="label" for="input-ten">10</label>
-            <input id="input-show-all" class="input" value="all" v-model="show" type="radio">
+            <input id="input-show-all" class="input" value="all" v-model="show" type="radio" @click="page = 0">
             <label class="label" for="input-show-all">All</label>
             <button class="button button-right"
                     v-bind:class="buttonRightClass"
                     v-bind:disabled="IsButtonRightDisabled"
+                    @click="pageUp()"
                     type="button"> > </button>
         </div>
     </div>
