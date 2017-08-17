@@ -42,7 +42,10 @@
             </tbody>
         </table>
         <div class="input-container">
-            <button class="button button-left"> < </button>
+            <button class="button button-left"
+                v-bind:class="buttonLeftClass"
+                v-bind:disabled="IsButtonLeftDisabled"
+                type="button"> < </button>
             <p class="description">Show by:</p>
             <input id="input-five" class="input" value="five" v-model="show" type="radio">
             <label class="label" for="input-five">5</label>
@@ -50,7 +53,10 @@
             <label class="label" for="input-ten">10</label>
             <input id="input-show-all" class="input" value="all" v-model="show" type="radio">
             <label class="label" for="input-show-all">All</label>
-            <button class="button button-right"> > </button>
+            <button class="button button-right"
+                    v-bind:class="buttonRightClass"
+                    v-bind:disabled="IsButtonRightDisabled"
+                    type="button"> > </button>
         </div>
     </div>
 <script src="scripts/script.js"></script>

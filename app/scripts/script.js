@@ -1,11 +1,13 @@
 new Vue({
     el: '#app',
     data: {
-        list: false,
+        listOrigin: false,
         sortKey: '№',
         search: '',
         filter: 'all',
         show: 'all',
+        page: 0,
+        pagesCount: 1,
         reverse: {},
         columns: ['№', 'Product number', 'Date', 'Category', 'Name', 'Quantity'],
     },
@@ -13,13 +15,46 @@ new Vue({
         this.load();
         this.initReverse();
     },
+    computed: {
+      list: function () {
+          switch (this.show){
+              case 'all':
+                  this.pagesCount = 1;
+                  return this.listOrigin;
+              case 'five':
+                  this.pagesCount = Math.ceil(this.listOrigin.length / 5);
+                  console.log(this.pagesCount);
+                  return this.listOrigin.slice(this.page, this.page + 5);
+              case 'ten':
+                  this.pagesCount = Math.ceil(this.listOrigin.length / 10);
+                  console.log(this.pagesCount);
+                  return this.listOrigin.slice(this.page, this.page + 10);
+              default:
+                  return this.listOrigin;
+          }
+      },
+
+      buttonLeftClass: function () {
+          if (this.page == 0) return 'button--disabled';
+          else return null;
+      },
+      buttonRightClass: function () {
+          if (this.page >= this.pagesCount - 1) return 'button--disabled';
+          else return null;
+      },
+      IsButtonLeftDisabled: function () {
+          if (this.page == 0) return true;
+          else return false;
+      },
+      IsButtonRightDisabled: function () {
+          if (this.page >= this.pagesCount - 1) return true;
+          else return false;
+      }
+    },
     methods: {
         filterArray: function (item) {
             if (this.filter === 'all') return true;
             else if (item.category == this.filter) return true;
-        },
-        setFilter: function () {
-
         },
         sortBy: function(sortKey) {
             switch (sortKey){
@@ -118,6 +153,7 @@ new Vue({
 
             this.$http.get('api/list.json').then(response => {
 
+                this.listOrigin = response.body;
                 this.list = response.body;
 
             }, error => {
