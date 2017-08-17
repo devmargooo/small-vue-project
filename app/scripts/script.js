@@ -17,18 +17,46 @@ new Vue({
     },
     computed: {
       list: function () {
-          switch (this.show){
-              case 'all':
-                  this.pagesCount = 1;
-                  return this.listOrigin;
-              case 'five':
-                  this.pagesCount = Math.ceil(this.listOrigin.length / 5);
-                  return this.listOrigin.slice(this.page*5, (this.page + 1)*5);
-              case 'ten':
-                  this.pagesCount = Math.ceil(this.listOrigin.length / 10);
-                  return this.listOrigin.slice(this.page*10, (this.page + 1)*10);
-              default:
-                  return this.listOrigin;
+          if (this.listOrigin) {
+              let temp;
+              switch (this.filter) {
+                  case 'all':
+                      temp = this.listOrigin.filter(function () {
+                          return true;
+                      });
+                      break;
+                  case 'dresses':
+                      temp = this.listOrigin.filter(this.filterDresses);
+                      break;
+                  case 't-shirts':
+                      temp = this.listOrigin.filter(this.filterTShirts);
+                      break;
+                  case 'shoes':
+                      temp = this.listOrigin.filter(this.filterShoes);
+                      break;
+                  case 'skirts':
+                      temp = this.listOrigin.filter(this.filterSkirts);
+                      break;
+                  default:
+                      temp = this.listOrigin.filter(function () {
+                          return true;
+                      });
+                      break;
+
+              }
+              switch (this.show) {
+                  case 'all':
+                      this.pagesCount = 1;
+                      return temp;
+                  case 'five':
+                      this.pagesCount = Math.ceil(this.listOrigin.length / 5);
+                      return temp.slice(this.page * 5, (this.page + 1) * 5);
+                  case 'ten':
+                      this.pagesCount = Math.ceil(this.listOrigin.length / 10);
+                      return temp.slice(this.page * 10, (this.page + 1) * 10);
+                  default:
+                      return temp;
+              }
           }
       },
 
@@ -50,10 +78,6 @@ new Vue({
       }
     },
     methods: {
-        filterArray: function (item) {
-            if (this.filter === 'all') return true;
-            else if (item.category == this.filter) return true;
-        },
         sortBy: function(sortKey) {
             switch (sortKey){
                 case 'Name':
@@ -84,6 +108,22 @@ new Vue({
                 default:
                     return;
             }
+        },
+        filterDresses: function (value) {
+            if (value.category === 'dresses') return true;
+            else return false;
+        },
+        filterSkirts: function (value) {
+            if (value.category === 'skirts') return true;
+            else return false;
+        },
+        filterTShirts: function (value) {
+            if (value.category === 't-shirts') return true;
+            else return false;
+        },
+        filterShoes: function (value) {
+            if (value.category === 'shoes') return true;
+            else return false;
         },
         compareByName: function (a, b) {
             if (a.name < b.name) return -1;
