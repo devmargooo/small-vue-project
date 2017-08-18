@@ -10,6 +10,7 @@ const Index = Vue.component('main-content', {
             page: 0,
             pagesCount: 1,
             reverse: {},
+            wasReversed: false,
             columns: ['№', 'Product number', 'Date', 'Category', 'Name', 'Quantity']
         }
     },
@@ -46,19 +47,49 @@ const Index = Vue.component('main-content', {
                         break;
 
                 }
+                if (this.wasReversed || !this.wasReversed) {
+                    switch (this.sortKey) {
+                        case 'Name':
+                            if (!this.reverse[this.sortKey]) temp = temp.sort(this.compareByName);
+                            else temp = temp.sort(this.compareByNameReversed);
+                            break;
+                        case 'Product number':
+                            if (!this.reverse[this.sortKey]) temp = temp.sort(this.compareByNumber);
+                            else temp = temp.sort(this.compareByNumberReversed);
+                            break;
+                        case 'Date':
+                            if (!this.reverse[this.sortKey]) temp = temp.sort(this.compareByDate);
+                            else temp = temp.sort(this.compareByDateReversed);
+                            break;
+                        case 'Category':
+                            if (!this.reverse[this.sortKey]) temp = temp.sort(this.compareByCategory);
+                            else temp = temp.sort(this.compareByCategoryReversed);
+                            break;
+                        case 'Quantity':
+                            if (!this.reverse[this.sortKey]) temp = temp.sort(this.compareByQuantity);
+                            else temp = temp.sort(this.compareByQuantityReversed);
+                            break;
+                        default:
+                            return temp;
+                    }
+                }
                 switch (this.show) {
                     case 'all':
                         this.pagesCount = 1;
-                        return temp;
+                        break;
                     case 'five':
                         this.pagesCount = Math.ceil(temp.length / 5);
-                        return temp.slice(this.page * 5, (this.page + 1) * 5);
+                        temp =  temp.slice(this.page * 5, (this.page + 1) * 5);
+                        break;
                     case 'ten':
                         this.pagesCount = Math.ceil(temp.length / 10);
-                        return temp.slice(this.page * 10, (this.page + 1) * 10);
+                        temp = temp.slice(this.page * 10, (this.page + 1) * 10);
+                        break;
                     default:
-                        return temp;
+                        break;
                 }
+                return temp;
+
             }
         },
 
@@ -83,12 +114,18 @@ const Index = Vue.component('main-content', {
         path: function (item) {
             return "product/" + item.id;
         },
+        setSortKey: function (column) {
+            if (this.sortKey == column) this.reverse[this.sortKey] = !this.reverse[this.sortKey];
+            this.sortKey = column;
+            this.wasReversed = !this.wasReversed;
+        },
         sortBy: function(sortKey) {
             switch (sortKey){
                 case 'Name':
                     if (!this.reverse[sortKey]) this.list.sort(this.compareByName);
                     else this.list.sort(this.compareByNameReversed);
                     this.reverse[sortKey] = !this.reverse[sortKey];
+                    console.log(this.list);
                     break;
                 case 'Product number':
                     if (!this.reverse[sortKey]) this.list.sort(this.compareByNumber);

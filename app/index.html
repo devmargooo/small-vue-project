@@ -37,7 +37,7 @@
             <table class="main-table" v-if="list">
                 <thead>
                 <tr>
-                    <th v-for="column in columns" @click="sortBy(column)">{{column}}</th>
+                    <th v-for="column in columns" @click="setSortKey(column)">{{column}}</th>
                 </tr>
                 </thead>
                 <tbody>
