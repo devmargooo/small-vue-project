@@ -203,7 +203,6 @@ const Index = Vue.component('main-content', {
             this.$http.get('api/list.json').then(response => {
 
                 this.listOrigin = response.body;
-                this.list = response.body;
 
             }, error => {
                 console.log("error");
@@ -216,7 +215,33 @@ const Product = Vue.component('product', {
     template: '#product',
     data: function () {
         return {
-            tabIndex: null
+            tabIndex: null,
+            data: false
+        }
+    },
+    computed:{
+        product: function () {
+            if (this.data){
+                for (let i = 0; i < this.data.length; i++){
+                    if (this.data[i].id == this.$route.params.id){
+                        return this.data[i];
+                    }
+                }
+            }
+        }
+    },
+    mounted: function () {
+        this.load();
+    },
+    methods:{
+        load: function () {
+            this.$http.get('api/extended.json').then(response => {
+
+                this.data = response.body;
+
+            }, error => {
+                console.log("error");
+            });
         }
     }
 });

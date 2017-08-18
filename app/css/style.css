@@ -4,9 +4,17 @@
     box-sizing: border-box;
 }
 
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
 html{
     font-size: 62.5%;
 }
+
 body.body{
     background: navy;
 }
@@ -118,4 +126,9 @@ body.body{
 
 .button-right{
     margin-left: 7rem;
+}
+
+.product-card__description{
+    width: 70%;
+    float: right;
 }
