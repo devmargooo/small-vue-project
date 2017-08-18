@@ -7,7 +7,7 @@
   "description": "beautiful little black dress",
   "img": "little-black-dress.jpg",
   "quantity": "few",
-  "comments":[
+  "reviews":[
     {
       "text": "this is comment 1",
       "rating": "5"
@@ -30,7 +30,7 @@
   "description": "beautiful red dress",
   "quantity": "average",
   "img": "red-dress.jpg",
-  "comments":[
+  "reviews":[
     {
       "text": "this is comment 1",
       "rating": "4"
@@ -49,7 +49,7 @@
   "description": "beautiful long blue skirt",
   "quantity": "lot",
   "img": "long-blue-skirt.jpg",
-  "comments":[
+  "reviews":[
     {
       "text": "this is comment 1",
       "rating": "4"
@@ -72,7 +72,7 @@
   "description": "beautiful long white skirt",
   "quantity": "lot",
   "img": "long-white-skirt.jpg",
-  "comments":[
+  "reviews":[
     {
       "text": "this is comment 1",
       "rating": "1"
@@ -95,7 +95,7 @@
   "description": "beautiful green skirt",
   "quantity": "none",
   "img": "green-skirt.jpg",
-  "comments":[
+  "reviews":[
     {
       "text": "this is comment 1",
       "rating": "3"
@@ -118,7 +118,7 @@
   "description": "beautiful white skirt",
   "quantity": "none",
   "img": "white-skirt.jpg",
-  "comments":[
+  "reviews":[
     {
       "text": "this is comment 1",
       "rating": "5"
@@ -141,7 +141,7 @@
   "description": "beautiful white t-shirt",
   "quantity": "lot",
   "img": "simple-white-t-shirt.jpg",
-  "comments":[
+  "reviews":[
     {
       "text": "this is comment 1",
       "rating": "3"
@@ -164,7 +164,7 @@
   "description": "beautiful beige t-shirt",
   "quantity": "lot",
   "img": "simple-beige-t-shirt.jpg",
-  "comments":[
+  "reviews":[
     {
       "text": "this is comment 1",
       "rating": "5"
@@ -184,7 +184,7 @@
   "description": "beautiful red t-shirt",
   "quantity": "lot",
   "img": "red-t-shirt.jpg",
-  "comments":[
+  "reviews":[
     {
       "text": "this is comment 1",
       "rating": "1"
@@ -203,7 +203,7 @@
   "description": "beautiful green t-shirt",
   "quantity": "few",
   "img": "green-t-shirt.jpg",
-  "comments":[
+  "reviews":[
     {
       "text": "this is comment 1",
       "rating": "2"
@@ -218,7 +218,7 @@
   "description": "beautiful black shoes",
   "quantity": "average",
   "img": "black-shoes.jpg",
-  "comments":[
+  "reviews":[
     {
       "text": "this is comment 1",
       "rating": "4"
@@ -237,7 +237,7 @@
   "description": "beautiful white shoes",
   "quantity": "none",
   "img": "white-shoes.jpg",
-  "comments":[
+  "reviews":[
     {
       "text": "this is comment 1",
       "rating": "4"

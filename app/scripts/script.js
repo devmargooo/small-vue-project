@@ -263,7 +263,7 @@ const Product = Vue.component('product', {
             let review = {};
             review.text = this.reviewText;
             review.rating = this.rating;
-            this.product.comments.push(review);
+            this.product.reviews.push(review);
         }
     }
 });

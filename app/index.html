@@ -103,8 +103,8 @@
                                 </tr>
                             </table>
                         </b-tab>
-                        <b-tab class="product-card__tab" title="Comments">
-                            <div class="review clearfix" v-for="item in product.comments">
+                        <b-tab class="product-card__tab" title="Reviews">
+                            <div class="review clearfix" v-for="item in product.reviews">
                                 <p class="review__text">{{item.text}}</p>
                                 <div class="review__rating">
                                     <img class="star" v-for="n in getRating(item)" src="pics/star.png" alt="*">
