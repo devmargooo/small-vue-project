@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    word-wrap: break-word;
 }
 
 .clearfix::after {
@@ -141,7 +142,7 @@ body.body{
 }
 
 .product-card__title{
-   margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .product-card__tab{

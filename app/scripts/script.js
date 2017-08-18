@@ -11,7 +11,8 @@ const Index = Vue.component('main-content', {
             pagesCount: 1,
             reverse: {},
             wasReversed: false,
-            columns: ['№', 'Product number', 'Date', 'Category', 'Name', 'Quantity']
+            columns: ['№', 'Product number', 'Date', 'Category', 'Name', 'Quantity'],
+            MAX_NAME_LENGTH: 250
         }
     },
     mounted: function () {
@@ -21,6 +22,11 @@ const Index = Vue.component('main-content', {
     computed: {
         list: function () {
             if (this.listOrigin) {
+                for (let i = 0; i < this.listOrigin.length; i++){
+                    if (this.listOrigin[i].name.length > this.MAX_NAME_LENGTH){
+                        this.listOrigin[i].name = this.listOrigin[i].name.slice(0, this.MAX_NAME_LENGTH);
+                    }
+                }
                 let temp;
                 switch (this.filter) {
                     case 'all':
@@ -118,38 +124,6 @@ const Index = Vue.component('main-content', {
             if (this.sortKey == column) this.reverse[this.sortKey] = !this.reverse[this.sortKey];
             this.sortKey = column;
             this.wasReversed = !this.wasReversed;
-        },
-        sortBy: function(sortKey) {
-            switch (sortKey){
-                case 'Name':
-                    if (!this.reverse[sortKey]) this.list.sort(this.compareByName);
-                    else this.list.sort(this.compareByNameReversed);
-                    this.reverse[sortKey] = !this.reverse[sortKey];
-                    console.log(this.list);
-                    break;
-                case 'Product number':
-                    if (!this.reverse[sortKey]) this.list.sort(this.compareByNumber);
-                    else this.list.sort(this.compareByNumberReversed);
-                    this.reverse[sortKey] = !this.reverse[sortKey];
-                    break;
-                case 'Date':
-                    if (!this.reverse[sortKey]) this.list.sort(this.compareByDate);
-                    else this.list.sort(this.compareByDateReversed);
-                    this.reverse[sortKey] = !this.reverse[sortKey];
-                    break;
-                case 'Category':
-                    if (!this.reverse[sortKey]) this.list.sort(this.compareByCategory);
-                    else this.list.sort(this.compareByCategoryReversed);
-                    this.reverse[sortKey] = !this.reverse[sortKey];
-                    break;
-                case 'Quantity':
-                    if (!this.reverse[sortKey]) this.list.sort(this.compareByQuantity);
-                    else this.list.sort(this.compareByQuantityReversed);
-                    this.reverse[sortKey] = !this.reverse[sortKey];
-                    break;
-                default:
-                    return;
-            }
         },
         filterDresses: function (value) {
             if (value.category === 'dresses') return true;
@@ -256,7 +230,9 @@ const Product = Vue.component('product', {
             data: false,
             imgPath: 'img/',
             reviewText: '',
-            rating: 1
+            rating: 1,
+            MAX_NAME_LENGTH: 250,
+            MAX_DESCRIPTION_LENGTH: 4000
         }
     },
     computed:{
@@ -264,6 +240,13 @@ const Product = Vue.component('product', {
             if (this.data){
                 for (let i = 0; i < this.data.length; i++){
                     if (this.data[i].id == this.$route.params.id){
+                        if (this.data[i].name.length > this.MAX_NAME_LENGTH){
+                            this.data[i].name = this.data[i].name.slice(0, this.MAX_NAME_LENGTH);
+                        }
+                        if (this.data[i].description.length > this.MAX_DESCRIPTION_LENGTH){
+                            this.data[i].description = this.data[i].description.slice(0, this.MAX_NAME_LENGTH);
+                        }
+
                         return this.data[i];
                     }
                 }
