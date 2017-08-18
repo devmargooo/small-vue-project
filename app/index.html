@@ -110,6 +110,21 @@
                                     <img class="star" v-for="n in getRating(item)" src="pics/star.png" alt="*">
                                 </div>
                             </div>
+                            <textarea v-model="reviewText" class="review-textarea"></textarea>
+                            <div class="input-container">
+                                <p class="description">Rating: </p>
+                                <input v-model="rating" id="rating-one" class="input" value="1" type="radio">
+                                <label class="label" for="rating-one">1</label>
+                                <input v-model="rating" id="rating-two" class="input" value="2" type="radio">
+                                <label class="label" for="rating-two">2</label>
+                                <input v-model="rating" id="rating-three" class="input" value="3" type="radio">
+                                <label class="label" for="rating-three">3</label>
+                                <input v-model="rating" id="rating-four" class="input" value="4" type="radio">
+                                <label class="label" for="rating-four">4</label>
+                                <input v-model="rating" id="rating-five" class="input" value="5" type="radio">
+                                <label class="label" for="rating-five">5</label>
+                                <button class="button-send" @click="sendReview()" type="submit">Send</button>
+                            </div>
                         </b-tab>
                     </b-tabs>
 

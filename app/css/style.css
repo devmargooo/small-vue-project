@@ -168,8 +168,8 @@ body.body{
     border-radius: 1rem;
 }
 
-.review:last-child{
-    margin-bottom: 0;
+.review:last-of-type{
+    margin-bottom: 3rem;
 }
 
 .review__text{
@@ -188,4 +188,29 @@ body.body{
     height: 1rem;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+}
+
+.review-textarea{
+    width: 100%;
+    min-height: 8rem;
+    padding: 1rem 2rem;
+}
+
+.button-send{
+    margin-left: 3rem;
+    padding: 1rem 2rem;
+    background: red;
+    border: none;
+    color: white;
+    box-shadow: none;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.button-send:hover, .button-send:focus{
+    background: purple;
+}
+
+.button-send:active{
+    opacity: 0.5;
 }

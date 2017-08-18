@@ -217,7 +217,9 @@ const Product = Vue.component('product', {
         return {
             tabIndex: null,
             data: false,
-            imgPath: 'img/'
+            imgPath: 'img/',
+            reviewText: '',
+            rating: 1
         }
     },
     computed:{
@@ -256,6 +258,12 @@ const Product = Vue.component('product', {
             }, error => {
                 console.log("error");
             });
+        },
+        sendReview: function () {
+            let review = {};
+            review.text = this.reviewText;
+            review.rating = this.rating;
+            this.product.comments.push(review);
         }
     }
 });
