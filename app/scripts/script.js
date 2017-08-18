@@ -216,7 +216,8 @@ const Product = Vue.component('product', {
     data: function () {
         return {
             tabIndex: null,
-            data: false
+            data: false,
+            imgPath: 'img/'
         }
     },
     computed:{
@@ -228,12 +229,25 @@ const Product = Vue.component('product', {
                     }
                 }
             }
+        },
+        imgSrc: function () {
+            if (this.data && this.product){
+                return this.imgPath + this.product.img;
+            }
+        },
+        title: function () {
+            if (this.data && this.product){
+                return this.product.name.charAt(0).toUpperCase() + this.product.name.slice(1);
+            }
         }
     },
     mounted: function () {
         this.load();
     },
     methods:{
+        getRating: function (review) {
+            return +review.rating;
+        },
         load: function () {
             this.$http.get('api/extended.json').then(response => {
 

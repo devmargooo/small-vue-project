@@ -74,16 +74,42 @@
     </template>
     <template id="product">
         <div>
-            {{product.name}}
+            <img v-bind:src="imgSrc" class="product__img" alt="">
             <div class="product-card clearfix">
-                <b-card no-block class="product-card__description">
+                <h1 class="product-card__title">{{title}}</h1>
+                <b-card no-block class="product-card__description" v-if="data">
                     <b-tabs small card ref="tabs" v-model="tabIndex">
-                        <b-tab title="General">
-                            I'm the first fading tab
+                        <b-tab title="General" class="product-card__tab">
+                            <table class="product-card__table">
+                                <tr>
+                                   <td class="product-card__table-name">Number</td>
+                                   <td class="product-card__table-content">{{product.number}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="product-card__table-name">Date</td>
+                                    <td class="product-card__table-content">{{product.date}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="product-card__table-name">Category</td>
+                                    <td class="product-card__table-content">{{product.category}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="product-card__table-name">Description</td>
+                                    <td class="product-card__table-content">{{product.description}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="product-card__table-name">Quantity</td>
+                                    <td class="product-card__table-content">{{product.quantity}}</td>
+                                </tr>
+                            </table>
                         </b-tab>
-                        <b-tab title="Edit profile">
-                            I'm the second tab
-
+                        <b-tab class="product-card__tab" title="Comments">
+                            <div class="review clearfix" v-for="item in product.comments">
+                                <p class="review__text">{{item.text}}</p>
+                                <div class="review__rating">
+                                    <img class="star" v-for="n in getRating(item)" src="pics/star.png" alt="*">
+                                </div>
+                            </div>
                         </b-tab>
                     </b-tabs>
 

@@ -7,7 +7,20 @@
   "description": "beautiful little black dress",
   "img": "little-black-dress.jpg",
   "quantity": "few",
-  "comments": ["this is comment 1", "this is comment 2", "this is comment 3"]
+  "comments":[
+    {
+      "text": "this is comment 1",
+      "rating": "5"
+    },
+    {
+      "text": "this is comment 2",
+      "rating": "3"
+    },
+    {
+      "text": "this is comment 3",
+      "rating": "1"
+    }
+  ]
 },{
   "id": 1,
   "number": "SCU00001",
@@ -17,7 +30,16 @@
   "description": "beautiful red dress",
   "quantity": "average",
   "img": "red-dress.jpg",
-  "comments": ["this is comment 1", "this is comment 2"]
+  "comments":[
+    {
+      "text": "this is comment 1",
+      "rating": "4"
+    },
+    {
+      "text": "this is comment 2",
+      "rating": "2"
+    }
+  ]
 },{
   "id": 2,
   "number": "SCU00002",
@@ -27,7 +49,20 @@
   "description": "beautiful long blue skirt",
   "quantity": "lot",
   "img": "long-blue-skirt.jpg",
-  "comments": ["this is comment 1", "this is comment 2", "this is comment 3"]
+  "comments":[
+    {
+      "text": "this is comment 1",
+      "rating": "4"
+    },
+    {
+      "text": "this is comment 2",
+      "rating": "2"
+    },
+    {
+      "text": "this is comment 3",
+      "rating": "5"
+    }
+  ]
 },{
   "id": 3,
   "number": "SCU00003",
@@ -37,7 +72,20 @@
   "description": "beautiful long white skirt",
   "quantity": "lot",
   "img": "long-white-skirt.jpg",
-  "comments": ["this is comment 1", "this is comment 2"]
+  "comments":[
+    {
+      "text": "this is comment 1",
+      "rating": "1"
+    },
+    {
+      "text": "this is comment 2",
+      "rating": "2"
+    },
+    {
+      "text": "this is comment 3",
+      "rating": "3"
+    }
+  ]
 },{
   "id": 4,
   "number": "SCU00004",
@@ -47,7 +95,20 @@
   "description": "beautiful green skirt",
   "quantity": "none",
   "img": "green-skirt.jpg",
-  "comments": ["this is comment 1", "this is comment 2", "this is comment 3"]
+  "comments":[
+    {
+      "text": "this is comment 1",
+      "rating": "3"
+    },
+    {
+      "text": "this is comment 2",
+      "rating": "2"
+    },
+    {
+      "text": "this is comment 3",
+      "rating": "1"
+    }
+  ]
 },{
   "id": 5,
   "number": "SCU00005",
@@ -57,7 +118,20 @@
   "description": "beautiful white skirt",
   "quantity": "none",
   "img": "white-skirt.jpg",
-  "comments": ["this is comment 1", "this is comment 2"]
+  "comments":[
+    {
+      "text": "this is comment 1",
+      "rating": "5"
+    },
+    {
+      "text": "this is comment 2",
+      "rating": "4"
+    },
+    {
+      "text": "this is comment 3",
+      "rating": "3"
+    }
+  ]
 },{
   "id": 6,
   "number": "SCU00006",
@@ -67,7 +141,20 @@
   "description": "beautiful white t-shirt",
   "quantity": "lot",
   "img": "simple-white-t-shirt.jpg",
-  "comments": ["this is comment 1", "this is comment 2", "this is comment 3"]
+  "comments":[
+    {
+      "text": "this is comment 1",
+      "rating": "3"
+    },
+    {
+      "text": "this is comment 2",
+      "rating": "3"
+    },
+    {
+      "text": "this is comment 3",
+      "rating": "3"
+    }
+  ]
 },{
   "id": 7,
   "number": "SCU00007",
@@ -77,7 +164,17 @@
   "description": "beautiful beige t-shirt",
   "quantity": "lot",
   "img": "simple-beige-t-shirt.jpg",
-  "comments": ["this is comment 1", "this is comment 2", "this is comment 3"]
+  "comments":[
+    {
+      "text": "this is comment 1",
+      "rating": "5"
+    },
+    {
+      "text": "this is comment 2",
+      "rating": "2"
+    }
+
+  ]
 },{
   "id": 8,
   "number": "SCU00008",
@@ -87,7 +184,16 @@
   "description": "beautiful red t-shirt",
   "quantity": "lot",
   "img": "red-t-shirt.jpg",
-  "comments": ["this is comment 1", "this is comment 2"]
+  "comments":[
+    {
+      "text": "this is comment 1",
+      "rating": "1"
+    },
+    {
+      "text": "this is comment 2",
+      "rating": "1"
+    }
+  ]
 },{
   "id": 9,
   "number": "SCU00009",
@@ -97,7 +203,12 @@
   "description": "beautiful green t-shirt",
   "quantity": "few",
   "img": "green-t-shirt.jpg",
-  "comments": ["this is comment 1"]
+  "comments":[
+    {
+      "text": "this is comment 1",
+      "rating": "2"
+    }
+  ]
 },{
   "id": 10,
   "number": "SCU00010",
@@ -107,7 +218,16 @@
   "description": "beautiful black shoes",
   "quantity": "average",
   "img": "black-shoes.jpg",
-  "comments": ["this is comment 1"]
+  "comments":[
+    {
+      "text": "this is comment 1",
+      "rating": "4"
+    },
+    {
+      "text": "this is comment 1",
+      "rating": "3"
+    }
+  ]
 },{
   "id": 11,
   "number": "SCU00011",
@@ -117,6 +237,11 @@
   "description": "beautiful white shoes",
   "quantity": "none",
   "img": "white-shoes.jpg",
-  "comments": ["this is comment 1"]
+  "comments":[
+    {
+      "text": "this is comment 1",
+      "rating": "4"
+    }
+  ]
 }
 ]

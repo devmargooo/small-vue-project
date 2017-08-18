@@ -131,4 +131,61 @@ body.body{
 .product-card__description{
     width: 70%;
     float: right;
+    font-size: 1.6rem;
+}
+
+.product__img{
+    width: 28%;
+    margin-right: 2%;
+    float: left;
+}
+
+.product-card__title{
+   margin-bottom: 2rem;
+}
+
+.product-card__tab{
+    padding: 2rem;
+}
+
+.nav-tabs .nav-link{
+    font-size: 1.6rem;
+}
+
+.product-card__table td{
+    padding: 0 2rem;
+}
+
+.product-card__table-name{
+    font-weight: 300;
+    color: #555555;
+}
+
+.review{
+    margin-bottom: 1rem;
+    padding: 2rem;
+    border: 1px solid lightgrey;
+    border-radius: 1rem;
+}
+
+.review:last-child{
+    margin-bottom: 0;
+}
+
+.review__text{
+    width: 77%;
+    float: left;
+    margin-right: 3%;
+}
+
+.review__rating{
+    width: 20%;
+    float: right;
+}
+
+.star{
+    width: 1rem;
+    height: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
