@@ -7,7 +7,7 @@
 html{
     font-size: 62.5%;
 }
-body{
+body.body{
     background: navy;
 }
 
@@ -30,8 +30,20 @@ body{
     background: lightblue;
 }
 
+.main-table thead tr:hover{
+    background: lightblue;
+}
+
+.main-table tr{
+    transition: all 0.3s;
+}
+
 .main-table tr:nth-child(2n){
     background: lightgrey;
+}
+
+.main-table tr:hover{
+    background-color: gold;
 }
 
 .main-table td, .main-table th{
@@ -39,6 +51,16 @@ body{
     padding: 0 2rem;
     text-align: left;
     transition: all 0.6s;
+}
+
+.main-table td a,
+.main-table td a:hover,
+.main-table td a:focus,
+.main-table td a:active,
+.main-table td a:visited
+{
+    color: black;
+    text-decoration: none;
 }
 
 .main-table th:hover{

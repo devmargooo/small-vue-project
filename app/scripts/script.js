@@ -51,10 +51,10 @@ const Index = Vue.component('main-content', {
                         this.pagesCount = 1;
                         return temp;
                     case 'five':
-                        this.pagesCount = Math.ceil(this.listOrigin.length / 5);
+                        this.pagesCount = Math.ceil(temp.length / 5);
                         return temp.slice(this.page * 5, (this.page + 1) * 5);
                     case 'ten':
-                        this.pagesCount = Math.ceil(this.listOrigin.length / 10);
+                        this.pagesCount = Math.ceil(temp.length / 10);
                         return temp.slice(this.page * 10, (this.page + 1) * 10);
                     default:
                         return temp;
@@ -80,6 +80,9 @@ const Index = Vue.component('main-content', {
         }
     },
     methods: {
+        path: function (item) {
+            return "product/" + item.id;
+        },
         sortBy: function(sortKey) {
             switch (sortKey){
                 case 'Name':
@@ -214,7 +217,7 @@ const Product = Vue.component('product', {
 });
 
 const routes = [
-    { path: '/product', component: Product },
+    { path: '/product/:id', component: Product },
     { path: '/', component: Index }
 ];
 

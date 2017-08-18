@@ -7,62 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="css/style.css" rel="stylesheet">
+    <!--<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap@next/dist/css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>-->
     <script src="https://unpkg.com/vue"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <!--<script src="//unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+    <script src="//unpkg.com/tether@latest/dist/js/tether.min.js"></script>
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>-->
 </head>
-<body>
+<body class="body">
     <main class="wrapper" id="app">
-        <router-link to="/product">Go to Product</router-link>
         <router-view></router-view>
-        <!--<div class="input-container">
-            <input id="input-dresses" class="input" value="dresses" v-model="filter" type="radio" @click="page = 0">
-            <label class="label" for="input-dresses">Dresses</label>
-            <input id="input-skirts" class="input" value="skirts" v-model="filter" type="radio" @click="page = 0">
-            <label class="label" for="input-skirts">Skirts</label>
-            <input id="input-tshirts" class="input" value="t-shirts" v-model="filter" type="radio" @click="page = 0">
-            <label class="label" for="input-tshirts">T-shirts</label>
-            <input id="input-shoes" class="input" value="shoes" v-model="filter" type="radio" @click="page = 0">
-            <label class="label" for="input-shoes">Shoes</label>
-            <input id="input-all" class="input" value="all" v-model="filter" type="radio" @click="page = 0">
-            <label class="label" for="input-all">All</label>
-        </div>
-        <table class="main-table" v-if="list">
-            <thead>
-                <tr>
-                    <th v-for="column in columns" @click="sortBy(column)">{{column}}</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="(item, index) in list">
-                    <td>{{index + 1}}</td>
-                    <td>{{item.number}}</td>
-                    <td>{{item.date}}</td>
-                    <td>{{item.category}}</td>
-                    <td>{{item.name}}</td>
-                    <td>{{item.quantity}}</td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="input-container">
-            <button class="button button-left"
-                v-bind:class="buttonLeftClass"
-                v-bind:disabled="IsButtonLeftDisabled"
-                @click="pageDown()"
-                type="button"> < </button>
-            <p class="description">Show by:</p>
-            <input id="input-five" class="input" value="five" v-model="show" type="radio" @click="page = 0">
-            <label class="label" for="input-five">5</label>
-            <input id="input-ten" class="input" value="ten" v-model="show" type="radio" @click="page = 0">
-            <label class="label" for="input-ten">10</label>
-            <input id="input-show-all" class="input" value="all" v-model="show" type="radio" @click="page = 0">
-            <label class="label" for="input-show-all">All</label>
-            <button class="button button-right"
-                    v-bind:class="buttonRightClass"
-                    v-bind:disabled="IsButtonRightDisabled"
-                    @click="pageUp()"
-                    type="button"> > </button>
-        </div>-->
     </main>
     <template id="index">
         <div>
@@ -85,14 +41,14 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr v-for="(item, index) in list">
-                    <td>{{index + 1}}</td>
-                    <td>{{item.number}}</td>
-                    <td>{{item.date}}</td>
-                    <td>{{item.category}}</td>
-                    <td>{{item.name}}</td>
-                    <td>{{item.quantity}}</td>
-                </tr>
+                    <tr v-for="(item, index) in list">
+                        <td><router-link v-bind:to="path(item)">{{index + 1}}</router-link></td>
+                        <td><router-link v-bind:to="path(item)">{{item.number}}</router-link></td>
+                        <td><router-link v-bind:to="path(item)">{{item.date}}</router-link></td>
+                        <td><router-link v-bind:to="path(item)">{{item.category}}</router-link></td>
+                        <td><router-link v-bind:to="path(item)">{{item.name}}</router-link></td>
+                        <td><router-link v-bind:to="path(item)">{{item.quantity}}</router-link></td>
+                    </tr>
                 </tbody>
             </table>
             <div class="input-container">
@@ -117,7 +73,7 @@
         </div>
     </template>
     <template id="product">
-        <div>Product!</div>
+        <div>Product {{ $route.params.id }}!</div>
     </template>
 <script src="scripts/script.js"></script>
 

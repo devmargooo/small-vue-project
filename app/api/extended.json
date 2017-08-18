@@ -1,0 +1,122 @@
+[{
+  "id": 0,
+  "number": "SCU00000",
+  "date": "10.10.2010",
+  "category": "dresses",
+  "name": "little black dress",
+  "description": "beautiful little black dress",
+  "img": "little-black-dress.jpg",
+  "quantity": "few",
+  "comments": ["this is comment 1", "this is comment 2", "this is comment 3"]
+},{
+  "id": 1,
+  "number": "SCU00001",
+  "date": "11.10.2010",
+  "category": "dresses",
+  "name": "red dress",
+  "description": "beautiful red dress",
+  "quantity": "average",
+  "img": "red-dress.jpg",
+  "comments": ["this is comment 1", "this is comment 2"]
+},{
+  "id": 2,
+  "number": "SCU00002",
+  "date": "01.10.2010",
+  "category": "skirts",
+  "name": "long blue skirt",
+  "description": "beautiful long blue skirt",
+  "quantity": "lot",
+  "img": "long-blue-skirt.jpg",
+  "comments": ["this is comment 1", "this is comment 2", "this is comment 3"]
+},{
+  "id": 3,
+  "number": "SCU00003",
+  "date": "01.12.2010",
+  "category": "skirts",
+  "name": "long white skirt",
+  "description": "beautiful long white skirt",
+  "quantity": "lot",
+  "img": "long-white-skirt.jpg",
+  "comments": ["this is comment 1", "this is comment 2"]
+},{
+  "id": 4,
+  "number": "SCU00004",
+  "date": "05.12.2010",
+  "category": "skirts",
+  "name": "green skirt",
+  "description": "beautiful green skirt",
+  "quantity": "none",
+  "img": "green-skirt.jpg",
+  "comments": ["this is comment 1", "this is comment 2", "this is comment 3"]
+},{
+  "id": 5,
+  "number": "SCU00005",
+  "date": "10.10.2010",
+  "category": "skirts",
+  "name": "white skirt",
+  "description": "beautiful white skirt",
+  "quantity": "none",
+  "img": "white-skirt.jpg",
+  "comments": ["this is comment 1", "this is comment 2"]
+},{
+  "id": 6,
+  "number": "SCU00006",
+  "date": "11.10.2010",
+  "category": "t-shirts",
+  "name": "simple white t-shirt",
+  "description": "beautiful white t-shirt",
+  "quantity": "lot",
+  "img": "simple-white-t-shirt.jpg",
+  "comments": ["this is comment 1", "this is comment 2", "this is comment 3"]
+},{
+  "id": 7,
+  "number": "SCU00007",
+  "date": "11.10.2010",
+  "category": "t-shirts",
+  "name": "simple beige t-shirt",
+  "description": "beautiful beige t-shirt",
+  "quantity": "lot",
+  "img": "simple-beige-t-shirt.jpg",
+  "comments": ["this is comment 1", "this is comment 2", "this is comment 3"]
+},{
+  "id": 8,
+  "number": "SCU00008",
+  "date": "11.10.2010",
+  "category": "t-shirts",
+  "name": "simple red t-shirt",
+  "description": "beautiful red t-shirt",
+  "quantity": "lot",
+  "img": "red-t-shirt.jpg",
+  "comments": ["this is comment 1", "this is comment 2"]
+},{
+  "id": 9,
+  "number": "SCU00009",
+  "date": "11.10.2010",
+  "category": "t-shirts",
+  "name": "simple green t-shirt",
+  "description": "beautiful green t-shirt",
+  "quantity": "few",
+  "img": "green-t-shirt.jpg",
+  "comments": ["this is comment 1"]
+},{
+  "id": 10,
+  "number": "SCU00010",
+  "date": "13.11.2010",
+  "category": "shoes",
+  "name": "black shoes",
+  "description": "beautiful black shoes",
+  "quantity": "average",
+  "img": "black-shoes.jpg",
+  "comments": ["this is comment 1"]
+},{
+  "id": 11,
+  "number": "SCU00011",
+  "date": "13.11.2010",
+  "category": "shoes",
+  "name": "white shoes",
+  "description": "beautiful white shoes",
+  "quantity": "none",
+  "img": "white-shoes.jpg",
+  "comments": ["this is comment 1"]
+}
+]
