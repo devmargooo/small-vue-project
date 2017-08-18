@@ -73,7 +73,22 @@
         </div>
     </template>
     <template id="product">
-        <div>Product {{ $route.params.id }}!</div>
+        <div>
+            Product {{ $route.params.id }}!
+
+            <b-card no-block>
+                <b-tabs small card ref="tabs" v-model="tabIndex">
+                    <b-tab title="General">
+                        I'm the first fading tab
+                    </b-tab>
+                    <b-tab title="Edit profile">
+                        I'm the second tab
+
+                    </b-tab>
+                </b-tabs>
+
+            </b-card>
+        </div>
     </template>
 <script src="scripts/script.js"></script>
 
