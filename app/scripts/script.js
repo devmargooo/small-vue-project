@@ -18,10 +18,48 @@ const Index = Vue.component('main-content', {
     mounted: function () {
         this.load();
         this.initReverse();
+
+        if (localStorage.getItem('sortkey')){
+            this.sortKey = localStorage.getItem('sortkey');
+        } else {
+            this.sortKey = '№';
+        }
+        console.log("sortKey is " + this.sortKey);
+
+        if (localStorage.getItem('wasreversed')){
+            this.wasReversed = localStorage.getItem('wasreversed');
+            this.reverse[this.sortKey] = this.wasReversed;
+
+        } else {
+            this.wasReversed = false;
+        }
+        console.log("wasReversed is " + this.wasReversed);
+
+        if (localStorage.getItem('show')){
+            this.show = localStorage.getItem('show');
+
+        } else {
+            this.show = 'all';
+        }
+        console.log("show is " + this.show);
+
+        if (localStorage.getItem('filter')){
+            this.filter = localStorage.getItem('filter');
+
+        } else {
+            this.filter = 'all';
+        }
+        console.log("filter is " + this.show);
+
     },
     computed: {
         list: function () {
             if (this.listOrigin) {
+                localStorage.setItem('sortkey', this.sortKey);
+                localStorage.setItem('wasreversed', this.wasReversed);
+                localStorage.setItem('show', this.show);
+                localStorage.setItem('filter', this.filter);
+
                 for (let i = 0; i < this.listOrigin.length; i++){
                     if (this.listOrigin[i].name.length > this.MAX_NAME_LENGTH){
                         this.listOrigin[i].name = this.listOrigin[i].name.slice(0, this.MAX_NAME_LENGTH);
