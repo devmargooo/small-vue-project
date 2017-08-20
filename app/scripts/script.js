@@ -24,7 +24,6 @@ const Index = Vue.component('main-content', {
         } else {
             this.sortKey = '№';
         }
-        console.log("sortKey is " + this.sortKey);
 
         if (localStorage.getItem('wasreversed')){
             this.wasReversed = localStorage.getItem('wasreversed');
@@ -33,7 +32,6 @@ const Index = Vue.component('main-content', {
         } else {
             this.wasReversed = false;
         }
-        console.log("wasReversed is " + this.wasReversed);
 
         if (localStorage.getItem('show')){
             this.show = localStorage.getItem('show');
@@ -41,7 +39,6 @@ const Index = Vue.component('main-content', {
         } else {
             this.show = 'all';
         }
-        console.log("show is " + this.show);
 
         if (localStorage.getItem('filter')){
             this.filter = localStorage.getItem('filter');
@@ -49,7 +46,6 @@ const Index = Vue.component('main-content', {
         } else {
             this.filter = 'all';
         }
-        console.log("filter is " + this.show);
 
     },
     computed: {
